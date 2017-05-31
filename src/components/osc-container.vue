@@ -1,7 +1,7 @@
 <template>
     <div class="root">
         <div v-if="ios" :style="{width: '750px', height: '40px', backgroundColor: backgroundColor}"></div>
-        <osc-navbar
+        <osc-titlebar
                 :dataRole="dataRole"
                 :height="height"
                 :backgroundColor="backgroundColor"
@@ -13,8 +13,8 @@
                 :rightItemSrc="rightItemSrc"
                 :rightItemTitle="rightItemTitle"
                 :rightItemColor="rightItemColor"
-                @naviBarRightItemClick="naviBarRightItemClick"
-                @naviBarLeftItemClick="naviBarLeftItemClick"></osc-navbar>
+                @titleBarRightItemClick="titleBarRightItemClick"
+                @titleBarLeftItemClick="titleBarLeftItemClick"></osc-titlebar>
         <div class="wrapper" :style="{top: ios ? (40 + height) : height}">
             <slot></slot>
         </div>
@@ -44,8 +44,8 @@
 
 		props: {
 			dataRole: {default: 'none'},
-			backgroundColor: {default: '#0099FF'},
-			height: {default: 88},
+			backgroundColor: {default: '#00000000'},
+			height: {default: 110},
 			title: {default: ''},
 			titleColor: {default: 'white'},
 			rightItemSrc: {default: ''},
@@ -57,12 +57,12 @@
 		},
 
 		methods: {
-			naviBarRightItemClick (e) {
-				this.$emit('naviBarRightItemClick', e)
+			titleBarRightItemClick (e) {
+				this.$emit('titleBarRightItemClick', e)
 			},
 
-			naviBarLeftItemClick (e) {
-				this.$emit('naviBarLeftItemClick', e)
+			titleBarLeftItemClick (e) {
+				this.$emit('titleBarLeftItemClick', e)
 			}
 		}
 	}

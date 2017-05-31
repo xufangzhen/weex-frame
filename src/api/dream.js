@@ -7,10 +7,10 @@
 import apiUtils from 'utils/api'
 
 // 获取梦想筹案例
-function dreamFeeds (body) {
-  return apiUtils.get('api/cf/v4/dream/feeds', body)
+function dreamFeeds(body) {
+	return apiUtils.get('api/cf/v4/dream/feeds', body)
 }
 
 export default {
-  dreamFeeds
+	dreamFeeds
 }

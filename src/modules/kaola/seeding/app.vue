@@ -7,7 +7,7 @@
 	export default {
 		data (){
 			return {
-				title: '个人资料',
+				title: '个人中心',
 				personName: '张小凡',
 				workPosition: 'web前端工程师',
 				workDepartment: '思源总部/互联集团/应用引擎部',
@@ -21,7 +21,7 @@
 			}
 		},
 		methods: {
-			naviBarLeftItemClick(){
+			titleBarLeftItemClick(){
 				navigator.pop()
 			}
 		}

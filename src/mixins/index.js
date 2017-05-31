@@ -10,36 +10,36 @@ import route from 'router/route'
 import imgUrl from 'constants/imgurl'
 
 export default {
-  data() {
-    return {
-      model,
-      route,
-      imgUrl,
-      android: weex.config.env && weex.config.env.platform.toLowerCase() === 'android',
-      ios: weex.config.env && weex.config.env.platform.toLowerCase() === 'ios',
-      web: weex.config.platform && weex.config.platform.toLowerCase() === 'web'
-    }
-  },
+	data() {
+		return {
+			model,
+			route,
+			imgUrl,
+			android: weex.config.env && weex.config.env.platform.toLowerCase() === 'android',
+			ios: weex.config.env && weex.config.env.platform.toLowerCase() === 'ios',
+			web: weex.config.platform && weex.config.platform.toLowerCase() === 'web'
+		}
+	},
 
-  created() {
+	created() {
 
-  },
+	},
 
-  methods: {
-    push({route, params, query}) {
-      if (route === this.route.web) {
-        navigator.pushWeb(query.url)
-        return
-      }
-      if (this.web) {
-        this.$router.push({
-          path: route.path,
-          params: params,
-          query: query
-        })
-        return
-      }
-      navigator.push(route, query)
-    }
-  }
+	methods: {
+		push({route, params, query}) {
+			if (route === this.route.web) {
+				navigator.pushWeb(query.url)
+				return
+			}
+			if (this.web) {
+				this.$router.push({
+					path: route.path,
+					params: params,
+					query: query
+				})
+				return
+			}
+			navigator.push(route, query)
+		}
+	}
 }

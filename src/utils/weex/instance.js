@@ -5,23 +5,23 @@
  */
 
 function isIOS() {
-  return weex.config.env ? weex.config.env.platform === 'iOS' : false
+	return weex.config.env ? weex.config.env.platform === 'iOS' : false
 }
 
 function isWeb() {
-  return weex.config.platform === 'Web'
+	return weex.config.platform === 'Web'
 }
 
 function getDeviceInfo() {
-  let env = weex.config.env
-  let deviceWidth = env.deviceWidth
-  let deviceHeight = env.deviceHeight
-  return {
-    deviceWidth: deviceWidth,
-    deviceHeight: deviceHeight
-  }
+	let env = weex.config.env
+	let deviceWidth = env.deviceWidth
+	let deviceHeight = env.deviceHeight
+	return {
+		deviceWidth: deviceWidth,
+		deviceHeight: deviceHeight
+	}
 }
 
 export default {
-  isIOS, isWeb, getDeviceInfo
+	isIOS, isWeb, getDeviceInfo
 }

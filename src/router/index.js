@@ -13,12 +13,12 @@ import route from './route'
 Vue.use(VueRouter)
 
 let router = new VueRouter({
-  // mode: 'history',
-  saveScrollPosition: true,
-  scrollBehavior: () => ({
-    y: 0
-  }),
-  routes: map
+	// mode: 'history',
+	saveScrollPosition: true,
+	scrollBehavior: () => ({
+		y: 0
+	}),
+	routes: map
 })
 
 Vue.$router = router

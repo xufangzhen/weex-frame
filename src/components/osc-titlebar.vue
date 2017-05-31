@@ -1,21 +1,21 @@
 <template>
     <div :dataRole="dataRole" class="root" :style="{ height: height + 'px', backgroundColor: backgroundColor}">
         <div class="div-wrap">
-            <text v-if="!leftItemSrc" class="text" naviItemPosition="left" :style="{ color: leftItemColor}"
+            <text v-if="!leftItemSrc" class="text" titleItemPosition="left" :style="{ color: leftItemColor}"
                   @click="onClickLeft">{{leftItemTitle}}
 
             </text>
-            <image v-if="leftItemSrc" class="img" naviItemPosition="left" :src="leftItemSrc"
+            <image v-if="leftItemSrc" class="img" titleItemPosition="left" :src="leftItemSrc"
                    @click="onClickLeft"></image>
         </div>
         <div class="div-wrap">
-            <text naviItemPosition="center" class="title" :style="{ color: titleColor}">{{title}}</text>
+            <text titleItemPosition="center" class="title" :style="{ color: titleColor}">{{title}}</text>
         </div>
         <div class="div-wrap">
-            <text v-if="!rightItemSrc" class="text" naviItemPosition="right" :style="{ color: rightItemColor }"
+            <text v-if="!rightItemSrc" class="text" titleItemPosition="right" :style="{ color: rightItemColor }"
                   @click="onClickRight">{{rightItemTitle}}
             </text>
-            <image v-if="rightItemSrc" class="img" naviItemPosition="right" :src="rightItemSrc"
+            <image v-if="rightItemSrc" class="img" titleItemPosition="right" :src="rightItemSrc"
                    @click="onClickRight"></image>
         </div>
     </div>
@@ -54,9 +54,9 @@
 			// navbar
 			dataRole: {default: 'none'},
 			//导航条背景色
-			backgroundColor: {default: '#0099FF'},
+			backgroundColor: {default: '#00000000'},
 			//导航条高度
-			height: {default: 88},
+			height: {default: 110},
 			//导航条标题
 			title: {default: ''},
 			//导航条标题颜色
@@ -76,11 +76,11 @@
 		},
 		methods: {
 			onClickRight (e) {
-				this.$emit('naviBarRightItemClick')
+				this.$emit('titleBarRightItemClick')
 			},
 			onClickLeft (e) {
 				console.log('height', this.height)
-				this.$emit('naviBarLeftItemClick')
+				this.$emit('titleBarLeftItemClick')
 			}
 		}
 	}
